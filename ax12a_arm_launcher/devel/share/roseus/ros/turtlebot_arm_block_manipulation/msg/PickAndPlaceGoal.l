@@ -1,0 +1,169 @@
+;; Auto-generated. Do not edit!
+
+
+(when (boundp 'turtlebot_arm_block_manipulation::PickAndPlaceGoal)
+  (if (not (find-package "TURTLEBOT_ARM_BLOCK_MANIPULATION"))
+    (make-package "TURTLEBOT_ARM_BLOCK_MANIPULATION"))
+  (shadow 'PickAndPlaceGoal (find-package "TURTLEBOT_ARM_BLOCK_MANIPULATION")))
+(unless (find-package "TURTLEBOT_ARM_BLOCK_MANIPULATION::PICKANDPLACEGOAL")
+  (make-package "TURTLEBOT_ARM_BLOCK_MANIPULATION::PICKANDPLACEGOAL"))
+
+(in-package "ROS")
+;;//! \htmlinclude PickAndPlaceGoal.msg.html
+(if (not (find-package "GEOMETRY_MSGS"))
+  (ros::roseus-add-msgs "geometry_msgs"))
+
+
+(defclass turtlebot_arm_block_manipulation::PickAndPlaceGoal
+  :super ros::object
+  :slots (_frame _z_up _gripper_open _gripper_closed _pickup_pose _place_pose _topic ))
+
+(defmethod turtlebot_arm_block_manipulation::PickAndPlaceGoal
+  (:init
+   (&key
+    ((:frame __frame) "")
+    ((:z_up __z_up) 0.0)
+    ((:gripper_open __gripper_open) 0.0)
+    ((:gripper_closed __gripper_closed) 0.0)
+    ((:pickup_pose __pickup_pose) (instance geometry_msgs::Pose :init))
+    ((:place_pose __place_pose) (instance geometry_msgs::Pose :init))
+    ((:topic __topic) "")
+    )
+   (send-super :init)
+   (setq _frame (string __frame))
+   (setq _z_up (float __z_up))
+   (setq _gripper_open (float __gripper_open))
+   (setq _gripper_closed (float __gripper_closed))
+   (setq _pickup_pose __pickup_pose)
+   (setq _place_pose __place_pose)
+   (setq _topic (string __topic))
+   self)
+  (:frame
+   (&optional __frame)
+   (if __frame (setq _frame __frame)) _frame)
+  (:z_up
+   (&optional __z_up)
+   (if __z_up (setq _z_up __z_up)) _z_up)
+  (:gripper_open
+   (&optional __gripper_open)
+   (if __gripper_open (setq _gripper_open __gripper_open)) _gripper_open)
+  (:gripper_closed
+   (&optional __gripper_closed)
+   (if __gripper_closed (setq _gripper_closed __gripper_closed)) _gripper_closed)
+  (:pickup_pose
+   (&rest __pickup_pose)
+   (if (keywordp (car __pickup_pose))
+       (send* _pickup_pose __pickup_pose)
+     (progn
+       (if __pickup_pose (setq _pickup_pose (car __pickup_pose)))
+       _pickup_pose)))
+  (:place_pose
+   (&rest __place_pose)
+   (if (keywordp (car __place_pose))
+       (send* _place_pose __place_pose)
+     (progn
+       (if __place_pose (setq _place_pose (car __place_pose)))
+       _place_pose)))
+  (:topic
+   (&optional __topic)
+   (if __topic (setq _topic __topic)) _topic)
+  (:serialization-length
+   ()
+   (+
+    ;; string _frame
+    4 (length _frame)
+    ;; float32 _z_up
+    4
+    ;; float32 _gripper_open
+    4
+    ;; float32 _gripper_closed
+    4
+    ;; geometry_msgs/Pose _pickup_pose
+    (send _pickup_pose :serialization-length)
+    ;; geometry_msgs/Pose _place_pose
+    (send _place_pose :serialization-length)
+    ;; string _topic
+    4 (length _topic)
+    ))
+  (:serialize
+   (&optional strm)
+   (let ((s (if strm strm
+              (make-string-output-stream (send self :serialization-length)))))
+     ;; string _frame
+       (write-long (length _frame) s) (princ _frame s)
+     ;; float32 _z_up
+       (sys::poke _z_up (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _gripper_open
+       (sys::poke _gripper_open (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; float32 _gripper_closed
+       (sys::poke _gripper_closed (send s :buffer) (send s :count) :float) (incf (stream-count s) 4)
+     ;; geometry_msgs/Pose _pickup_pose
+       (send _pickup_pose :serialize s)
+     ;; geometry_msgs/Pose _place_pose
+       (send _place_pose :serialize s)
+     ;; string _topic
+       (write-long (length _topic) s) (princ _topic s)
+     ;;
+     (if (null strm) (get-output-stream-string s))))
+  (:deserialize
+   (buf &optional (ptr- 0))
+   ;; string _frame
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _frame (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;; float32 _z_up
+     (setq _z_up (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _gripper_open
+     (setq _gripper_open (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; float32 _gripper_closed
+     (setq _gripper_closed (sys::peek buf ptr- :float)) (incf ptr- 4)
+   ;; geometry_msgs/Pose _pickup_pose
+     (send _pickup_pose :deserialize buf ptr-) (incf ptr- (send _pickup_pose :serialization-length))
+   ;; geometry_msgs/Pose _place_pose
+     (send _place_pose :deserialize buf ptr-) (incf ptr- (send _place_pose :serialization-length))
+   ;; string _topic
+     (let (n) (setq n (sys::peek buf ptr- :integer)) (incf ptr- 4) (setq _topic (subseq buf ptr- (+ ptr- n))) (incf ptr- n))
+   ;;
+   self)
+  )
+
+(setf (get turtlebot_arm_block_manipulation::PickAndPlaceGoal :md5sum-) "406b9d2b14d3c2ad49cf6e087a7292df")
+(setf (get turtlebot_arm_block_manipulation::PickAndPlaceGoal :datatype-) "turtlebot_arm_block_manipulation/PickAndPlaceGoal")
+(setf (get turtlebot_arm_block_manipulation::PickAndPlaceGoal :definition-)
+      "# ====== DO NOT MODIFY! AUTOGENERATED FROM AN ACTION DEFINITION ======
+#goal definition
+string frame
+float32 z_up
+float32 gripper_open
+float32 gripper_closed
+geometry_msgs/Pose pickup_pose
+geometry_msgs/Pose place_pose
+string topic
+
+================================================================================
+MSG: geometry_msgs/Pose
+# A representation of pose in free space, composed of position and orientation. 
+Point position
+Quaternion orientation
+
+================================================================================
+MSG: geometry_msgs/Point
+# This contains the position of a point in free space
+float64 x
+float64 y
+float64 z
+
+================================================================================
+MSG: geometry_msgs/Quaternion
+# This represents an orientation in free space in quaternion form.
+
+float64 x
+float64 y
+float64 z
+float64 w
+
+")
+
+
+
+(provide :turtlebot_arm_block_manipulation/PickAndPlaceGoal "406b9d2b14d3c2ad49cf6e087a7292df")
+
+

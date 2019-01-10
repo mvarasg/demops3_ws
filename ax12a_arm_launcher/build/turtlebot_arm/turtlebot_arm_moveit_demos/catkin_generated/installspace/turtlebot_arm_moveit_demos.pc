@@ -1,0 +1,8 @@
+prefix=/home/turtlebot/ultimate/install
+
+Name: turtlebot_arm_moveit_demos
+Description: Description of turtlebot_arm_moveit_demos
+Version: 0.3.3
+Cflags: 
+Libs: -L/home/turtlebot/ultimate/install/lib 
+Requires: 

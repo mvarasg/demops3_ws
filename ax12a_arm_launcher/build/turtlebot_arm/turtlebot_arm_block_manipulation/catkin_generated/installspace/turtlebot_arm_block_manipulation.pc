@@ -1,0 +1,8 @@
+prefix=/home/turtlebot/ultimate/install
+
+Name: turtlebot_arm_block_manipulation
+Description: Description of turtlebot_arm_block_manipulation
+Version: 0.3.3
+Cflags: -I/home/turtlebot/ultimate/install/include
+Libs: -L/home/turtlebot/ultimate/install/lib 
+Requires: actionlib actionlib_msgs interactive_markers pcl_ros roscpp visualization_msgs moveit_core moveit_ros_planning_interface

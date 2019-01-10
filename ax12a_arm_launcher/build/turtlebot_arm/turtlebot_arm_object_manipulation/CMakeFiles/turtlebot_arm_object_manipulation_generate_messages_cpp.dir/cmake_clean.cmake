@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/turtlebot_arm_object_manipulation_generate_messages_cpp"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/PickAndPlaceActionFeedback.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/UserCommandAction.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/InteractiveManipActionGoal.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/MoveToTargetActionFeedback.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/PickAndPlaceActionGoal.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/UserCommandResult.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/UserCommandActionResult.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/PickAndPlaceActionResult.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/InteractiveManipResult.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/MoveToTargetActionResult.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/InteractiveManipGoal.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/PickAndPlaceAction.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/MoveToTargetAction.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/PickAndPlaceGoal.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/ObjectDetectionAction.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/ObjectDetectionGoal.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/MoveToTargetFeedback.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/MoveToTargetActionGoal.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/PickAndPlaceFeedback.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/ObjectDetectionResult.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/InteractiveManipActionResult.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/MoveToTargetGoal.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/ObjectDetectionFeedback.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/UserCommandActionFeedback.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/InteractiveManipFeedback.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/UserCommandGoal.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/ObjectDetectionActionGoal.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/MoveToTargetResult.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/ObjectDetectionActionFeedback.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/InteractiveManipAction.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/InteractiveManipActionFeedback.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/ObjectDetectionActionResult.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/UserCommandActionGoal.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/UserCommandFeedback.h"
+  "/home/turtlebot/ultimate/devel/include/turtlebot_arm_object_manipulation/PickAndPlaceResult.h"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang )
+  include(CMakeFiles/turtlebot_arm_object_manipulation_generate_messages_cpp.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
