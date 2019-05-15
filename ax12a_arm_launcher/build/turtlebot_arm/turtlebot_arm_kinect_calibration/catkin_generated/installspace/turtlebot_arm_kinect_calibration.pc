@@ -1,8 +1,0 @@
-prefix=/home/turtlebot/ultimate/install
-
-Name: turtlebot_arm_kinect_calibration
-Description: Description of turtlebot_arm_kinect_calibration
-Version: 0.3.3
-Cflags: 
-Libs: -L/home/turtlebot/ultimate/install/lib 
-Requires: cv_bridge image_geometry image_transport pcl_ros roscpp tf visualization_msgs

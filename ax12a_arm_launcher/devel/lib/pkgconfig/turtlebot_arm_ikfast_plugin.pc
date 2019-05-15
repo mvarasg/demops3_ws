@@ -1,8 +1,0 @@
-prefix=/home/turtlebot/ultimate/devel
-
-Name: turtlebot_arm_ikfast_plugin
-Description: Description of turtlebot_arm_ikfast_plugin
-Version: 0.3.3
-Cflags: 
-Libs: -L/home/turtlebot/ultimate/devel/lib 
-Requires: moveit_core pluginlib roscpp tf_conversions

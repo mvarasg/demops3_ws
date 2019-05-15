@@ -1,0 +1,8 @@
+prefix=/home/turtlebot/demops3_ws/devel
+
+Name: ps3joy
+Description: Description of ps3joy
+Version: 1.12.0
+Cflags: 
+Libs: -L/home/turtlebot/demops3_ws/devel/lib 
+Requires: diagnostic_msgs sensor_msgs rospy rosgraph

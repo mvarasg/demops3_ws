@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/turtlebot/demops3_ws/src/ps3joy/src/sixpair.c
+string.h
+-
+unistd.h
+-
+stdio.h
+-
+usb.h
+-
+

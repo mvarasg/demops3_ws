@@ -1,0 +1,8 @@
+prefix=/home/turtlebot/demops3_ws/install
+
+Name: demops3
+Description: Description of demops3
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/turtlebot/demops3_ws/install/lib 
+Requires: 

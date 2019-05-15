@@ -1,0 +1,8 @@
+prefix=/home/turtlebot/demops3_ws/install
+
+Name: turtlebot_arm_bringup
+Description: Description of turtlebot_arm_bringup
+Version: 0.3.3
+Cflags: 
+Libs: -L/home/turtlebot/demops3_ws/install/lib 
+Requires: 

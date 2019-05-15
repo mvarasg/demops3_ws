@@ -1,8 +1,0 @@
-prefix=/home/turtlebot/ultimate/install
-
-Name: turtlebot_arm_moveit_config
-Description: Description of turtlebot_arm_moveit_config
-Version: 0.3.0
-Cflags: 
-Libs: -L/home/turtlebot/ultimate/install/lib 
-Requires: 

@@ -1,0 +1,9 @@
+<launch>
+
+  <include file="$(find ps3joy)/launch/ps3.launch" />
+  <include file="$(find turtlebot_arm_bringup)/launch/arm.launch" />
+
+  <node pkg="demops3" type="publisher.py" name="publisher" output="screen" />
+  <node pkg="demops3" type="autorepeat.py" name="autorepeat" output="screen" />
+
+</launch>
