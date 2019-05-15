@@ -3,6 +3,6 @@ prefix=/home/turtlebot/demops3_ws/devel
 Name: demops3
 Description: Description of demops3
 Version: 0.0.0
-Cflags: 
+Cflags: -I/home/turtlebot/demops3_ws/devel/include
 Libs: -L/home/turtlebot/demops3_ws/devel/lib 
 Requires: 
