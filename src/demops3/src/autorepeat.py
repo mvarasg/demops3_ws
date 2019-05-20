@@ -12,20 +12,29 @@ from sensor_msgs.msg import Joy
 """
 
 class Autorepeat(object):
-	def __init__(self, args):
-		super(Autorepeat, self).__init__()
-		self.ps3joy = rospy.Subscriber('/joy', Joy, self.publicar)
-		self.node = rospy.Publisher('/autorepeat', Joy, queue_size = 5)
-		self.msg = Joy()
-	def publicar(self, state):
-		self.msg = state
+    def __init__(self):
+        super(Autorepeat, self).__init__()
+        self.ps3joy = rospy.Subscriber('/joy', Joy, self.publicar)
+        self.node = rospy.Publisher('/autorepeat', Joy, queue_size = 1)
+        self.msg = Joy()
+    def publicar(self, state):
+        self.msg = state
 
-	def publica(self):
-		self.node.publish(self.msg)
-		
+    def publica(self):
+        self.node.publish(self.msg)
 
-rospy.init_node('Autorepeat')
-obj = Autorepeat('args')
-while 1:
-	obj.publica()
-	rospy.sleep(0.01)
+def init():
+    rospy.init_node('Autorepeat')
+    rate = rospy.Rate(100) # 10hz
+    autorepeat = Autorepeat()
+    while not rospy.is_shutdown():
+        autorepeat.publica()
+        rate.sleep()
+
+
+if __name__ == '__main__':
+    try:
+        init()
+    except rospy.ROSInterruptException:
+        pass
+
