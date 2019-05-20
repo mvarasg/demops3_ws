@@ -2,12 +2,13 @@
 
 import rospy
 from std_msgs.msg import Float64
-from sensor_msgs.msg import Joy
+from sensor_msgs.msg import Joy, JointState
 
 class Controller(object):
     def __init__(self, args):
         super(Controller, self).__init__()
-        self.ps3joy = rospy.Subscriber('/autorepeat', Joy, self.topublish)
+        self.ps3joy = rospy.Subscriber('/autorepeat', Joy, self.toPublish)
+        self.posiciones = rospy.Subscriber('/joint_states', JointState, self.getPositions)
         
         self.names = ["arm_shoulder_pan", "arm_shoulder_lift", "arm_elbow_flex", "arm_wrist_flex", "gripper"]
 
@@ -16,14 +17,11 @@ class Controller(object):
             self.publishers.append(rospy.Publisher("/"+name+"_joint/command", Float64, queue_size=1))
 
 
-
         self.min_limits = [-1.75, 0.3, -1.7, -1.7, -0.6]# ARM
         self.max_limits = [1.75, 1.7, 1.7, 1.7, 0.5]    # UNDER BASE
 
-
-        #self.positions = []
-        self.positions = [0, 1.7, -1.5, 1.6, 0] # ARM UNDER BASE
-
+        #self.positions = [0, 1.7, -1.5, 1.6, 0]
+        self.positions = [0, 0.3, 0, 0, 0] # ARM UNDER BASE
 
         self.msg1 = Float64()
         self.msg2 = Float64()
@@ -31,7 +29,13 @@ class Controller(object):
         self.msg4 = Float64()
         self.msg5 = Float64()
 
-    def topublish(self, state):
+    def getPositions(self, state):
+        positions = state.position
+        if len(positions) == 5 and any(positions):
+            self.positions = list(positions)
+            self.posiciones.unregister()
+
+    def toPublish(self, state):
         buttons = state.buttons # PS3
         if not state.buttons:
             return
