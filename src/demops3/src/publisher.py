@@ -34,6 +34,8 @@ class Controller(object):
         if len(positions) == 5 and any(positions):
             self.positions = list(positions)
             self.posiciones.unregister()
+        elif len(positions) == 5:
+            print positions
 
     def toPublish(self, state):
         buttons = state.buttons # PS3

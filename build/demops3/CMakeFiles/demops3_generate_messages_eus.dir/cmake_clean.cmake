@@ -1,7 +1,5 @@
 file(REMOVE_RECURSE
   "CMakeFiles/demops3_generate_messages_eus"
-  "/home/turtlebot/demops3_ws/devel/share/roseus/ros/demops3/msg/Num.l"
-  "/home/turtlebot/demops3_ws/devel/share/roseus/ros/demops3/srv/AddTwoInts.l"
   "/home/turtlebot/demops3_ws/devel/share/roseus/ros/demops3/manifest.l"
 )
 

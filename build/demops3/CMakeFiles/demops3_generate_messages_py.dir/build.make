@@ -53,37 +53,19 @@ CMAKE_BINARY_DIR = /home/turtlebot/demops3_ws/build
 # Include the progress variables for this target.
 include demops3/CMakeFiles/demops3_generate_messages_py.dir/progress.make
 
-demops3/CMakeFiles/demops3_generate_messages_py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg/_Num.py
-demops3/CMakeFiles/demops3_generate_messages_py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv/_AddTwoInts.py
 demops3/CMakeFiles/demops3_generate_messages_py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg/__init__.py
 demops3/CMakeFiles/demops3_generate_messages_py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv/__init__.py
 
 
-/home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg/_Num.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg/_Num.py: /home/turtlebot/demops3_ws/src/demops3/msg/Num.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtlebot/demops3_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python from MSG demops3/Num"
-	cd /home/turtlebot/demops3_ws/build/demops3 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py /home/turtlebot/demops3_ws/src/demops3/msg/Num.msg -Idemops3:/home/turtlebot/demops3_ws/src/demops3/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p demops3 -o /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg
-
-/home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv/_AddTwoInts.py: /opt/ros/kinetic/lib/genpy/gensrv_py.py
-/home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv/_AddTwoInts.py: /home/turtlebot/demops3_ws/src/demops3/srv/AddTwoInts.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtlebot/demops3_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python code from SRV demops3/AddTwoInts"
-	cd /home/turtlebot/demops3_ws/build/demops3 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/gensrv_py.py /home/turtlebot/demops3_ws/src/demops3/srv/AddTwoInts.srv -Idemops3:/home/turtlebot/demops3_ws/src/demops3/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p demops3 -o /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv
-
 /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg/__init__.py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg/_Num.py
-/home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg/__init__.py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv/_AddTwoInts.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtlebot/demops3_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Python msg __init__.py for demops3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtlebot/demops3_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Python msg __init__.py for demops3"
 	cd /home/turtlebot/demops3_ws/build/demops3 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg --initpy
 
 /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv/__init__.py: /opt/ros/kinetic/lib/genpy/genmsg_py.py
-/home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv/__init__.py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg/_Num.py
-/home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv/__init__.py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv/_AddTwoInts.py
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtlebot/demops3_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Python srv __init__.py for demops3"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtlebot/demops3_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Python srv __init__.py for demops3"
 	cd /home/turtlebot/demops3_ws/build/demops3 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/genpy/cmake/../../../lib/genpy/genmsg_py.py -o /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv --initpy
 
 demops3_generate_messages_py: demops3/CMakeFiles/demops3_generate_messages_py
-demops3_generate_messages_py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg/_Num.py
-demops3_generate_messages_py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv/_AddTwoInts.py
 demops3_generate_messages_py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/msg/__init__.py
 demops3_generate_messages_py: /home/turtlebot/demops3_ws/devel/lib/python2.7/dist-packages/demops3/srv/__init__.py
 demops3_generate_messages_py: demops3/CMakeFiles/demops3_generate_messages_py.dir/build.make

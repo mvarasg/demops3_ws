@@ -53,23 +53,6 @@ CMAKE_BINARY_DIR = /home/turtlebot/demops3_ws/build
 # Include the progress variables for this target.
 include demops3/CMakeFiles/demops3_generate_messages_nodejs.dir/progress.make
 
-demops3/CMakeFiles/demops3_generate_messages_nodejs: /home/turtlebot/demops3_ws/devel/share/gennodejs/ros/demops3/msg/Num.js
-demops3/CMakeFiles/demops3_generate_messages_nodejs: /home/turtlebot/demops3_ws/devel/share/gennodejs/ros/demops3/srv/AddTwoInts.js
-
-
-/home/turtlebot/demops3_ws/devel/share/gennodejs/ros/demops3/msg/Num.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/turtlebot/demops3_ws/devel/share/gennodejs/ros/demops3/msg/Num.js: /home/turtlebot/demops3_ws/src/demops3/msg/Num.msg
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtlebot/demops3_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Javascript code from demops3/Num.msg"
-	cd /home/turtlebot/demops3_ws/build/demops3 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/turtlebot/demops3_ws/src/demops3/msg/Num.msg -Idemops3:/home/turtlebot/demops3_ws/src/demops3/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p demops3 -o /home/turtlebot/demops3_ws/devel/share/gennodejs/ros/demops3/msg
-
-/home/turtlebot/demops3_ws/devel/share/gennodejs/ros/demops3/srv/AddTwoInts.js: /opt/ros/kinetic/lib/gennodejs/gen_nodejs.py
-/home/turtlebot/demops3_ws/devel/share/gennodejs/ros/demops3/srv/AddTwoInts.js: /home/turtlebot/demops3_ws/src/demops3/srv/AddTwoInts.srv
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtlebot/demops3_ws/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Javascript code from demops3/AddTwoInts.srv"
-	cd /home/turtlebot/demops3_ws/build/demops3 && ../catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gennodejs/cmake/../../../lib/gennodejs/gen_nodejs.py /home/turtlebot/demops3_ws/src/demops3/srv/AddTwoInts.srv -Idemops3:/home/turtlebot/demops3_ws/src/demops3/msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -p demops3 -o /home/turtlebot/demops3_ws/devel/share/gennodejs/ros/demops3/srv
-
-demops3_generate_messages_nodejs: demops3/CMakeFiles/demops3_generate_messages_nodejs
-demops3_generate_messages_nodejs: /home/turtlebot/demops3_ws/devel/share/gennodejs/ros/demops3/msg/Num.js
-demops3_generate_messages_nodejs: /home/turtlebot/demops3_ws/devel/share/gennodejs/ros/demops3/srv/AddTwoInts.js
 demops3_generate_messages_nodejs: demops3/CMakeFiles/demops3_generate_messages_nodejs.dir/build.make
 
 .PHONY : demops3_generate_messages_nodejs

@@ -1,7 +1,7 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/turtlebot/demops3_ws/src/demops3/msg/Num.msg"
-services_str = "/home/turtlebot/demops3_ws/src/demops3/srv/AddTwoInts.srv"
+messages_str = ""
+services_str = ""
 pkg_name = "demops3"
 dependencies_str = "std_msgs"
 langs = "gencpp;geneus;genlisp;gennodejs;genpy"

@@ -33,14 +33,6 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/demops3/msg" TYPE FILE FILES "/home/turtlebot/demops3_ws/src/demops3/msg/Num.msg")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/demops3/srv" TYPE FILE FILES "/home/turtlebot/demops3_ws/src/demops3/srv/AddTwoInts.srv")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/demops3/cmake" TYPE FILE FILES "/home/turtlebot/demops3_ws/build/demops3/catkin_generated/installspace/demops3-msg-paths.cmake")
 endif()
 
