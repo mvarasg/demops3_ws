@@ -25,7 +25,7 @@ print arbotix.syncRead(servos,data_name,size)
 # It means, Servo 1 has a value of 256*1 + 100
 # Servo 2 has a value of 256*3 + 255...
 
-#---------------------------------------
+#----------------------------------------
 
 ### To set a value to a parameter of one servo.
 ### for info visit http://emanual.robotis.com/docs/en/dxl/ax/ax-12a/#control-table-of-eeprom-area
