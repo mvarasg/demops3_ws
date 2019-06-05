@@ -1,0 +1,9 @@
+servos = [5]
+            data_name = 40
+            size = 2
+            values = self.syncRead(servos,data_name,size)
+            print values
+            if type(values) == list:
+                effort = 256*values[1] + values[0]
+                if values[1] <= 7:
+                    self.effortPublisher.publish(effort)

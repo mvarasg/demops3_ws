@@ -11,16 +11,15 @@ arbotix = ArbotiX(port)
 ### for info visit http://emanual.robotis.com/docs/en/dxl/ax/ax-12a/#control-table-of-eeprom-area
 
 # List of servos IDs
-servos = [1,2,3,4,5]
-#servos = [5]
+#servos = [1,2,3,4,5]
+servos = [5]
 
 # Value of the register (EEPROM or RAM area) to read
 # parameter to set and its siz
-data_name = 14
+data_name = 40
 size = 2
 while True:
 	print arbotix.syncRead(servos,data_name,size)
-	print "asdf"
 	sleep(0.2)
 
 # Return example (with Max Torque):
