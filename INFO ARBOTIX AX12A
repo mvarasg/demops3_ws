@@ -23,3 +23,9 @@ roslaunch turtlebot_arm_bringup arm.launch
 roslaunch ps3joy ps3.launch 
 python autorepeat.py
 python publisher.py
+
+
+Data: 34 RAM
+Size 2
+Torque Limit Servos: 1-2-3-4-5
+[255, 3, 255, 3, 100, 1, 100, 1, 100, 1]

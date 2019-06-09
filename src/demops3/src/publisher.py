@@ -118,4 +118,3 @@ if __name__ == '__main__':
         init()
     except rospy.ROSInterruptException:
         pass
-        
