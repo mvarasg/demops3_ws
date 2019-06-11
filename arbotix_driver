@@ -156,26 +156,28 @@ class ArbotixROS(ArbotiX):
 
             # TORQUE INFERIDO
             gripper = [5]
-            values = self.syncRead(gripper,40,2)
-            if type(values) == list:
-                if values[1] <= 7:
-                    effort = 256*values[1] + values[0]
-                    if effort > 1023:
-                        effort = -effort + 1024
-                    self.effortPublisher.publish(effort)
+            # values = self.syncRead(gripper,40,2)
+            # if type(values) == list:
+            #     if values[1] <= 7:
+            #         effort = 256*values[1] + values[0]
+            #         if effort > 1023:
+            #             effort = -effort + 1024
+            #         self.effortPublisher.publish(effort)
 
             # POSICION DESEADA - POSICION ACTUAL
             goal_position = self.syncRead(gripper, 30, 2)
             present_position = self.syncRead(gripper, 36, 2)
             if type(goal_position) == list and type(goal_position) == type(present_position):
-                goal_position = 256*goal_position[1] + goal_position[0]
-                present_position = 256*present_position[1] + present_position[0]
-                self.mewtwo.publish( (goal_position - present_position)*(-30) )
+                if goal_position[1] <= 7 and present_position[1] <= 7:
+                    goal_position = 256*goal_position[1] + goal_position[0]
+                    present_position = 256*present_position[1] + present_position[0]
+                    self.mewtwo.publish( (goal_position - present_position) )
 
-            # LEER VOLTAJE
-            voltage = self.syncRead(gripper, 42, 1)
-            voltage = (voltage[0] - 121)*50
-            self.voltage.publish(voltage)
+            # # LEER VOLTAJE
+            # vol_val = self.syncRead(gripper, 42, 1)
+            # if vol_val and vol_val[0] < 200:
+            #     vol_val = vol_val[0]
+            #     self.voltage.publish(vol_val)
 
             # LEER TEMPERATURA
             #data_name = 43
