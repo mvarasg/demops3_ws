@@ -9,7 +9,7 @@ import scene_graph as sg
 import sys
 
 import rospy
-from std_msgs.msg import Int32, Float32
+from std_msgs.msg import Int32, Bool
 import random
 
 # We will use 32 bits data, so an integer has 4 bytes
@@ -25,10 +25,15 @@ class Nodo(object):
 	def __init__(self):
 		super(Nodo, self).__init__()
 		self.subscriber = rospy.Subscriber("/efforts", Int32, self.callback)
+		self.subscriber2 = rospy.Subscriber("/modeFeedback", Bool, self.grabbing)
 		self.val = 0
+		self.grab = False
 
 	def callback(self, msg):
 		self.val = (msg.data/1023.0)
+
+	def grabbing(self, msg):
+		self.grab = msg.data
 
 
 def on_key(window, key, scancode, action, mods):
@@ -116,13 +121,13 @@ def tapa():
 	tapa.childs += [createQuad(255*0.35,255*0.35,255*0.35,255*0.35,255*0.35,255*0.35)]
 	return tapa
 
-def circulo(EL):
+def circulo(grab):
 	circulo = sg.SceneGraphNode("")
 	theta = 0
 	while theta <= np.pi:
 		diff = sg.SceneGraphNode("")
 		diff.transform = tr.matmul([tr.scale(0.05,1,0), tr.rotationZ(theta)])
-		if EL >= 64/1023.0:
+		if grab:
 			diff.childs += [createQuad(255,0,0,255,0,0)] #ROJO
 		else:
 			diff.childs += [createQuad(0,255,0,0,255,0)] #VERDE
@@ -174,10 +179,6 @@ if __name__ == "__main__":
 
 	while not glfw.window_should_close(window):
 
-		VALORES10[pointer] = obj.val
-		pointer = (pointer + 1) % 10
-		moda = mode(VALORES10)
-
 		# Using GLFW to check for input events
 		glfw.poll_events()
 
@@ -187,9 +188,7 @@ if __name__ == "__main__":
 		# Drawing the arbol
 		sg.drawSceneGraphNode(BARRA, shaderProgram, tr.identity())
 		sg.drawSceneGraphNode(TAPA, shaderProgram, tr.translate(0, obj.val+0.5, 0))
-		sg.drawSceneGraphNode(circulo(moda), shaderProgram, tr.identity())
-
-		print str(moda).ljust(18), "---", str(obj.val).rjust(18)
+		sg.drawSceneGraphNode(circulo(obj.grab), shaderProgram, tr.identity())
 
 		# Once the render is done, buffers are swapped, showing only the complete scene.
 		glfw.swap_buffers(window)

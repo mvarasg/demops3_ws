@@ -5,5 +5,6 @@
 
   <node pkg="demops3" type="publisher.py" name="publisher" output="screen" />
   <node pkg="demops3" type="autorepeat.py" name="autorepeat" output="screen" />
+  <node pkg="demops3" type="modeFeedback.py" name="modeFeedback" output="screen" />
 
 </launch>
