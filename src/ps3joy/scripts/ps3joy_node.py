@@ -76,7 +76,7 @@ class uinputjoy:
         if self.file == None:
             print("Trying to modprobe uinput.", file=sys.stderr)
             os.system("modprobe uinput > /dev/null 2>&1")
-            time.sleep(1) # uinput isn't ready to go right away.
+            time.sleep(0.1) # uinput isn't ready to go right away.
             self.file = self.open_uinput()
             if self.file == None:
                 print("Can't open uinput device. Is it accessible by this user? Did you mean to run as root?", file=sys.stderr)
@@ -301,7 +301,7 @@ class decoder:
                     #print "Got a frame at ", curtime, 1 / (curtime - lastvalidtime)
                     if not activated:
                         self.send_cmd(ctrl)
-                        time.sleep(0.5)
+                        time.sleep(0.1)
                         self.rumble_cmd[1] = 0
                         self.send_cmd(ctrl)
                         print("Connection activated")
@@ -458,7 +458,7 @@ class connection_manager:
                 if first_loop:
                     print("Error binding to socket, will retry every 5 seconds. Do you have another ps3joy.py running? This error occurs on some distributions (such as Ubuntu Karmic). Please read http://www.ros.org/wiki/ps3joy/Troubleshooting for solutions.", file=sys.stderr)
                 first_loop = False
-                time.sleep(0.5)
+                time.sleep(0.1)
                 continue
             sock.listen(1)
             return sock
@@ -478,7 +478,7 @@ class connection_manager:
         while not rospy.is_shutdown():
             print("Waiting for connection. Disconnect your PS3 joystick from USB and press the pairing button.")
             try:
-                intr_sock.settimeout(5)
+                intr_sock.settimeout(1)
                 ctrl_sock.settimeout(1)
                 while True:
                     try:
@@ -516,7 +516,7 @@ class connection_manager:
             except Exception as e:
                 traceback.print_exc()
                 print("Caught exception: %s"%str(e), file=sys.stderr)
-                time.sleep(1)
+                time.sleep(0.1)
 
 inactivity_timout_string = "--inactivity-timeout"
 no_disable_bluetoothd_string = "--no-disable-bluetoothd"
@@ -584,7 +584,7 @@ if __name__ == "__main__":
             quit(1)
         if disable_bluetoothd:
             os.system("/etc/init.d/bluetooth stop > /dev/null 2>&1")
-            time.sleep(1) # Give the socket time to be available.
+            time.sleep(0.1) # Give the socket time to be available.
         try:
             while os.system("hciconfig hci0 > /dev/null 2>&1") != 0:
                 print("No bluetooth dongle found or bluez rosdep not installed. Will retry in 5 seconds.", file=sys.stderr)

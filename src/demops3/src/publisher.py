@@ -103,7 +103,7 @@ class Controller(object):
 
         if buttons[3]: # SQUARE
             if self.positions[4] >= self.min_limits[4]:
-                self.positions[4] -= 0.01
+                self.positions[4] -= 0.005
             self.msg5.data = self.positions[4]
             self.publishers[4].publish(self.msg5)
 
